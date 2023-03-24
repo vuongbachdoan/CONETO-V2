@@ -1,0 +1,125 @@
+body {
+    height: 100vh;
+}
+
+.ant-layout .ant-layout-sider {
+    background-color: #fff;
+    border-right: 0.5px solid #eeeeee;
+
+    .ant-menu {
+        border: 0px;
+        background-color: transparent;
+    }
+}
+
+.ant-menu-item {
+    svg {
+        height: 100%;
+    }
+}
+
+.ant-divider-horizontal {
+    margin: 12px 0px;
+}
+
+.m-0 {
+    margin: 0px;
+}
+
+@font-face {
+    font-family: "SFPro-ultralight";
+    font-style: normal;
+    font-display: auto;
+    /* or block, swap, fallback, optional */
+    src: local("SFPro"),
+        url("../Fonts/SFProDisplay-Ultralight.ttf") format("truetype");
+    unicode-range: U+000-5FF;
+    /* Latin glyphs */
+}
+
+@font-face {
+    font-family: "SFPro-light";
+    font-style: normal;
+    font-display: auto;
+    /* or block, swap, fallback, optional */
+    src:
+        local("SFPro"),
+        url("../Fonts/SFProDisplay-Light.ttf") format("truetype");
+    unicode-range: U+000-5FF;
+    /* Latin glyphs */
+}
+
+@font-face {
+    font-family: "SFPro-medium";
+    font-style: normal;
+    font-display: auto;
+    /* or block, swap, fallback, optional */
+    src:
+        local("SFPro"),
+        url("../Fonts/SFProDisplay-Medium.ttf") format("truetype");
+    unicode-range: U+000-5FF;
+    /* Latin glyphs */
+}
+
+@font-face {
+    font-family: "SFPro-regular";
+    font-style: normal;
+    font-display: auto;
+    /* or block, swap, fallback, optional */
+    src:
+        local("SFPro"),
+        url("../Fonts/SFProDisplay-Regular.ttf") format("truetype");
+    unicode-range: U+000-5FF;
+    /* Latin glyphs */
+}
+
+@font-face {
+    font-family: "SFPro-heavy";
+    font-style: normal;
+    font-display: auto;
+    /* or block, swap, fallback, optional */
+    src:
+        local("SFPro"),
+        url("../Fonts/SFProDisplay-Heavy.ttf") format("truetype");
+    unicode-range: U+000-5FF;
+    /* Latin glyphs */
+}
+
+@font-face {
+    font-family: "SFPro-semibold";
+    font-style: normal;
+    font-display: auto;
+    /* or block, swap, fallback, optional */
+    src: local("SFPro"),
+        url("../Fonts/SFProDisplay-Semibold.ttf") format("truetype");
+    unicode-range: U+000-5FF;
+    /* Latin glyphs */
+}
+
+@font-face {
+    font-family: "SFPro-bold";
+    font-style: normal;
+    font-display: auto;
+    /* or block, swap, fallback, optional */
+    src:
+        local("SFPro"),
+        url("../Fonts/SFProDisplay-Bold.ttf") format("truetype");
+    unicode-range: U+000-5FF;
+    /* Latin glyphs */
+}
+
+@font-face {
+    font-family: "SFPro-black";
+    font-style: normal;
+    font-display: auto;
+    /* or block, swap, fallback, optional */
+    src:
+        local("SFPro"),
+        url("../Fonts/SFProDisplay-Black.ttf") format("truetype");
+    unicode-range: U+000-5FF;
+    /* Latin glyphs */
+}
+
+* {
+    font-family: "SFPro-medium";
+}
