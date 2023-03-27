@@ -11,6 +11,7 @@ import { MenuCheckbox } from './components/MenuCheckbox/MenuCheckbox';
 import { ChatSummary } from './components/ChatSummary/ChatSummary';
 import { ChatField } from './components/ChatField/ChatField';
 import { useSelector } from 'react-redux';
+import { Auth } from 'aws-amplify';
 
 const { Header, Sider, Content } = Layout;
 const { TextArea } = Input;
@@ -56,7 +57,7 @@ export const Home = () => {
   ];
 
   const handleLogOut = () => {
-    logoutFunc()
+    Auth.signOut()
   }
 
   return (
