@@ -25,7 +25,7 @@ export const MessageField = ({ messages }) => {
                         actions={[<a key="list-loadmore-edit">edit</a>, <a key="list-loadmore-more">more</a>]}
                     >
                         <List.Item.Meta
-                            avatar={<Avatar src={`https://joesch.moe/api/v1/random?key=${index}`} />}
+                            avatar={<Avatar src={`https://robohash.org/${index}`} />}
                             title={<a href="https://ant.design">{item.sender}</a>}
                             description={item.content}
                         />

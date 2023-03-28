@@ -9,17 +9,14 @@ import { Icons } from '../../Assets/icons/icons';
 import { Filter } from './components/Filter/Filter';
 import { MenuCheckbox } from './components/MenuCheckbox/MenuCheckbox';
 import { ChatSummary } from './components/ChatSummary/ChatSummary';
-import { ChatField } from './components/ChatField/ChatField';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Auth } from 'aws-amplify';
 import { MessageField } from './components/MessageField/MessageField';
 import styled from "styled-components";
+import { updateMessages } from '../../Redux/Features/User/userReducer';
+import { sortMessageByDate } from '../../shared/utils/sortMessage';
 
 const { Header, Sider, Content } = Layout;
-const { TextArea } = Input;
-const WrapperMessage = styled.div`
-  background: red;
-`;
 
 export const Home = () => {
   const logoutFunc = useSelector((state) => state.USER.logOut)
@@ -65,7 +62,11 @@ export const Home = () => {
     Auth.signOut()
   }
 
-  const messages = useSelector((state) => state.USER.messages)
+  const messages = useSelector((state) => state.USER.messages);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(updateMessages(sortMessageByDate([...messages])));
+  }, []);
 
   return (
 
