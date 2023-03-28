@@ -9,6 +9,10 @@ const WrapperMessage = styled.div`
 `;
 
 export const MessageField = ({ messages }) => {
+    useEffect(() => {
+        const messageBody = document.querySelector('.message-wrapper .ant-spin-container');
+        messageBody.scrollIntoView({ behavior: "smooth", block: "end" });
+    }, [messages])
 
     return (
         <>

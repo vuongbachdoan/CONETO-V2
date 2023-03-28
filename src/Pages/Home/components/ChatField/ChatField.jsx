@@ -22,6 +22,7 @@ export const ChatField = () => {
   }
   const sendMessage = async (e) => {
     e.stopPropagation();
+
     const mes = await API.graphql(
       graphqlOperation(
         createMessage,
@@ -34,7 +35,8 @@ export const ChatField = () => {
         }
       )
     )
-    dispatch(pushMessage(mes.data.createMessage))
+
+    dispatch(pushMessage(mes.data.createMessage));
   }
 
   useEffect(() => {
