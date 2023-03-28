@@ -2,8 +2,8 @@ import { Button, Form, Input, Space } from "antd";
 import { Icons } from "../../../../Assets/icons/icons";
 import { useEffect, useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
-import { createMessage } from "../../../../graphql/mutations";
-import { listMessages } from "../../../../graphql/queries";
+// import { createMessage } from "../../../../graphql/mutations";
+// import { listMessages } from "../../../../graphql/queries";
 import { useDispatch, useSelector } from "react-redux";
 import { pushMessage, updateMessages } from "../../../../Redux/Features/User/userReducer";
 
@@ -23,18 +23,18 @@ export const ChatField = () => {
   const sendMessage = async (e) => {
     e.stopPropagation();
 
-    const mes = await API.graphql(
-      graphqlOperation(
-        createMessage,
-        {
-          input: {
-            content: message,
-            sender: "vbachdoan",
-            receiver: "dngthy",
-          }
-        }
-      )
-    )
+    // const mes = await API.graphql(
+    //   graphqlOperation(
+    //     createMessage,
+    //     {
+    //       input: {
+    //         content: message,
+    //         sender: "vbachdoan",
+    //         receiver: "dngthy",
+    //       }
+    //     }
+    //   )
+    // )
 
     dispatch(pushMessage(mes.data.createMessage));
   }
@@ -45,11 +45,11 @@ export const ChatField = () => {
   }, [])
 
   const getMessage = async () => {
-    return await API.graphql(
-      graphqlOperation(
-        listMessages
-      )
-    )
+    // return await API.graphql(
+    //   graphqlOperation(
+    //     listMessages
+    //   )
+    // )
   }
 
   return (
