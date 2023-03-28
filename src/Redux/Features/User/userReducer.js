@@ -4,13 +4,24 @@ export const userSlices = createSlice({
     name: 'USER',
     initialState: {
         user: {},
-        logOut: () => {}
+        logOut: () => {},
+        messages: []
     },
     reducers: {
-        setLogOutFunc: (state, action) => state.logOut = action.payload,
-        setUserData: (state, action) => state.user = action.payload
+        setLogOutFunc: (state, action) => {
+            state.logOut = action.payload
+        },
+        setUserData: (state, action) => {
+            state.user = action.payload
+        },
+        pushMessage: (state, action) => {
+            state.messages = [...state.messages, action.payload]
+        },
+        updateMessages: (state, action) => {
+            state.messages = action.payload
+        }
     }
 })
 
-export const { someAction, setLogOutFunc, setUserData } = userSlices.actions;
+export const { setLogOutFunc, setUserData, updateMessages, pushMessage } = userSlices.actions;
 export default userSlices.reducer;

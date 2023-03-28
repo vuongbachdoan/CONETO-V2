@@ -3,13 +3,13 @@ import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
 
 
-// import awsExports from '../../aws-exports';
+import awsExports from '../../aws-exports';
 import { FormSignIn } from './components/FormSignIn';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { FormSignUp } from './components/FormSignUp';
 import { FormConfirmSignUp } from './components/FormConfirmSignUp';
 
-// Amplify.configure(awsExports);
+Amplify.configure(awsExports);
 
 export const Login = () => {
     return (

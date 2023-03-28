@@ -12,9 +12,14 @@ import { ChatSummary } from './components/ChatSummary/ChatSummary';
 import { ChatField } from './components/ChatField/ChatField';
 import { useSelector } from 'react-redux';
 import { Auth } from 'aws-amplify';
+import { MessageField } from './components/MessageField/MessageField';
+import styled from "styled-components";
 
 const { Header, Sider, Content } = Layout;
 const { TextArea } = Input;
+const WrapperMessage = styled.div`
+  background: red;
+`;
 
 export const Home = () => {
   const logoutFunc = useSelector((state) => state.USER.logOut)
@@ -59,6 +64,8 @@ export const Home = () => {
   const handleLogOut = () => {
     Auth.signOut()
   }
+
+  const messages = useSelector((state) => state.USER.messages)
 
   return (
 
@@ -119,16 +126,15 @@ export const Home = () => {
         </Header>
         <Content
           style={{
-            margin: '24px 16px',
+            margin: '12px 12px 0px 12px',
             padding: 24,
             minHeight: 280,
             background: colorBgContainer,
+            overflowY: "hidden"
           }}
           className='app-content'
         >
-          <Button onClick={handleLogOut}>Log Out</Button>
-          
-          <ChatField />
+          <MessageField messages={messages} />
         </Content>
       </Layout>
       {

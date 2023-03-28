@@ -214,15 +214,13 @@
 
 .app-content {
     position: relative;
+    display: flex;
+    flex-direction: column;
 
     .message-field {
         border: 0.5px solid #eee;
         border-radius: 5px;
         padding: 12px;
-        position: absolute;
-        bottom: 0px;
-        margin-bottom: 24px;
-        width: calc(100% - 48px);
 
         &:hover {
             border: 1px solid #068558;
@@ -267,6 +265,18 @@
 
             &:hover {
                 background-color: #012317 !important;
+            }
+        }
+    }
+
+    .message-wrapper {
+        flex: 1;
+        overflow-y: hidden;
+        &>div {
+            height: 100%;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                display: none;
             }
         }
     }
